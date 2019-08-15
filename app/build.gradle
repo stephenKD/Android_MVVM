@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.compileSdk
+    defaultConfig {
+        applicationId "com.example.mvvm"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //kotlin
+    implementation depends.kotlin.stdlib
+    implementation depends.kotlin.reflect
+
+    //support library
+    implementation depends.support.v4
+    implementation depends.support.appcompat
+    implementation depends.support.design
+    implementation depends.support.cardview
+    implementation depends.support.constraint
+    implementation depends.support.multidex
+    implementation depends.support.preference
+    implementation depends.support.preferenceV14
+
+    //rxjava2
+    implementation depends.rxjava2.core
+    implementation depends.rxjava2.android
+
+    //okhttp
+    implementation depends.okhttp
+
+    //retrofit2
+    implementation depends.retrofit2
+
+    //paging
+    implementation depends.paging
+
+    //epoxy
+    implementation depends.epoxy.core
+    implementation depends.epoxy.paging
+    kapt depends.epoxy.compiler
+
+    //koin
+    implementation depends.koin
+
+    //mvrx
+    implementation 'com.airbnb.android:mvrx:0.6.0'
+
+    //lifecycle
+    implementation depends.lifecycle
+    kapt depends.lifecycleAnnotation
+
+    //gson
+    implementation depends.gson
+
+    //test
+    testImplementation depends.junit
+    androidTestImplementation depends.supportTest
+    androidTestImplementation depends.supportTest
+}

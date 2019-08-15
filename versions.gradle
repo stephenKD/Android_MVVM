@@ -1,0 +1,89 @@
+ext {
+    versions = [
+            compileSdk     : 28,
+            minSdk         : 19,
+            targetSdk      : 28,
+            gradleBuildTool: '3.2.1',
+            kotlin         : '1.3.20',
+            googleServices : '3.1.1',
+            supportLibrary : '1.0.0-beta01',
+            dagger         : '2.16',
+            okhttp         : '3.10.0',
+            retrofit2      : '2.5.0',
+            rxJava2        : '2.2.4',
+            epoxy          : '2.19.0',
+            paging         : '2.0.0-beta01',
+            koin           : '1.0.2',
+            lifecycle      : '2.0.0',
+            reactivestreams: '1.1.1',
+            gson           : '2.8.5'
+
+    ]
+    depends = [
+            kotlin             : [
+                    stdlib : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+                    reflect: "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin",
+            ],
+
+            //==================== Support Library ====================
+            support            : [
+                    v4            : "androidx.legacy:legacy-support-v4:$versions.supportLibrary",
+                    appcompat     : "androidx.appcompat:appcompat:$versions.supportLibrary",
+                    design        : "com.google.android.material:material:$versions.supportLibrary",
+                    cardview      : "androidx.cardview:cardview:$versions.supportLibrary",
+                    constraint    : 'androidx.constraintlayout:constraintlayout:1.1.2',
+                    multidex      : 'androidx.multidex:multidex:2.0.0',
+                    preference    : "androidx.preference:preference:$versions.supportLibrary",
+                    preferenceV14 : "androidx.legacy:legacy-preference-v14:$versions.supportLibrary",
+                    recyclerViewV7: "com.android.support:recyclerview-v7:$versions.supportLibrary",
+            ],
+
+            //==================== Structure ====================
+            rxjava2            : [
+                    core   : "io.reactivex.rxjava2:rxjava:$versions.rxJava2",
+                    android: "io.reactivex.rxjava2:rxandroid:2.0.1"
+            ],
+            okhttp             : [
+                    "com.squareup.okhttp3:okhttp:$versions.okhttp",
+                    "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+            ],
+            retrofit2          : [
+                    "com.squareup.retrofit2:retrofit:$versions.retrofit2",
+                    "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit2",
+                    "com.squareup.retrofit2:converter-gson:$versions.retrofit2"
+            ],
+            epoxy              : [
+                    core    : "com.airbnb.android:epoxy:$versions.epoxy",
+                    paging  : "com.airbnb.android:epoxy-paging:$versions.epoxy",
+                    compiler: "com.airbnb.android:epoxy-processor:$versions.epoxy",
+            ],
+
+            paging             : [
+                    "androidx.paging:paging-runtime:$versions.paging",
+                    "android.arch.paging:rxjava2:$versions.paging"
+            ],
+            koin               : [
+                    "org.koin:koin-core:1.0.2",
+                    "org.koin:koin-android-architecture:0.9.3",
+                    "org.koin:koin-core-ext:1.0.2",
+                    "org.koin:koin-android:1.0.2",
+                    "org.koin:koin-android-scope:1.0.2",
+                    "org.koin:koin-android-viewmodel:1.0.2"
+            ],
+            lifecycle          : [
+                    "androidx.lifecycle:lifecycle-extensions:2.0.0",
+                    "androidx.lifecycle:lifecycle-reactivestreams:2.0.0"
+            ],
+            lifecycleAnnotation: [
+                    "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+            ],
+            gson               : [
+                    "com.google.code.gson:gson:$versions.gson"
+            ],
+
+            //==================== Test ====================
+            junit              : "junit:junit:4.12",
+            supportTest        : ['androidx.test:runner:1.1.0-alpha4',
+                                  'androidx.test.espresso:espresso-core:3.1.0-alpha4']
+    ]
+}
